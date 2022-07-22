@@ -16,3 +16,7 @@ func crear(pos: Vector2, dir: float, vel: float, danio_p: int) -> void:
 ## Metodos
 func _physics_process(delta: float) -> void:
 	position += velocidad * delta
+
+
+func _on_VisibilityNotifier2D_screen_exited() -> void:
+		queue_free()
