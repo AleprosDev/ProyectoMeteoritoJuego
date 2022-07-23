@@ -1,4 +1,4 @@
-# Nivel.gd
+#Nivel.gd
 class_name Nivel
 extends Node2D
 
@@ -10,7 +10,7 @@ func _ready() -> void:
 	conectar_seniales()
 	crear_contenedores()
 	
-## Metodos Custom
+##Metodos custom
 func conectar_seniales() -> void:
 	Eventos.connect("disparo", self, "on_disparo")
 	
@@ -21,5 +21,3 @@ func crear_contenedores() -> void:
 	
 func on_disparo(proyectil:Proyectil) -> void:
 	contenedor_proyectiles.add_child(proyectil)
-
-	
