@@ -17,11 +17,34 @@ onready var laser:RayoLaser = $LaserBeam2D
 ## Metodos
 func _unhandled_input(event: InputEvent) -> void:
 	#Disparo rayo
+	#if event.is_action_pressed("disparo_secundario", true):
+	#	if event.button_index == BUTTON_RIGHT and event.pressed:
+	#		laser.set_is_casting(true)
+
+	#if event.is_action_released("disparo_secundario", false):
+	#	if event.button_index == BUTTON_RIGHT and event.pressed == false:
+	#		laser.set_is_casting(false)
+
+			
+	#Disparo rayo
 	if event.is_action_pressed("disparo_secundario"):
 		laser.set_is_casting(true)
+		print(laser)
+		print(event)
 		
 	if event.is_action_released("disparo_secundario"):
 		laser.set_is_casting(false)
+		print(laser)
+		print(event)
+		
+
+
+
+			
+			
+
+		
+	
 
 
 func _integrate_forces(state: Physics2DDirectBodyState) -> void:

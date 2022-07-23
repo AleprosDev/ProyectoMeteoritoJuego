@@ -20,7 +20,10 @@ rotation = 1.5708
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 22
 position = Vector2( 0, 2 )
+z_index = 50
+z_as_relative = false
 shape = SubResource( 1 )
 
 [node name="Canion" parent="." instance=ExtResource( 3 )]
@@ -38,7 +41,12 @@ scale = Vector2( 2, 2 )
 [node name="DisparosFX" parent="Canion" index="2"]
 position = Vector2( 21, -15 )
 
+[node name="TimerEnfriamiento" parent="Canion" index="3"]
+process_priority = -29
+
 [node name="LaserBeam2D" parent="." instance=ExtResource( 2 )]
 position = Vector2( 40, 0 )
+z_index = 41
+z_as_relative = false
 
 [editable path="Canion"]

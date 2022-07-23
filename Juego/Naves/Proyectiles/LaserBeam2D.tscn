@@ -62,6 +62,7 @@ color_ramp = SubResource( 2 )
 
 [node name="LaserBeam2D" type="RayCast2D"]
 enabled = true
+exclude_parent = false
 cast_to = Vector2( 0, 0 )
 script = ExtResource( 1 )
 

@@ -7,7 +7,7 @@ export var cast_speed := 7000.0
 # Maximum length of the laser in pixels.
 export var max_length := 1400.0
 # Base duration of the tween animation in seconds.
-export var growth_time := 0.1
+export var growth_time = 0.3
 
 # If `true`, the laser is firing.
 # It plays appearing and disappearing animations when it's not animating.
@@ -74,7 +74,7 @@ func cast_beam() -> void:
 func appear() -> void:
 	if tween.is_active():
 		tween.stop_all()
-	tween.interpolate_property(fill, "width", 0, line_width, growth_time * 2)
+	tween.interpolate_property(fill, "width", 0, line_width, growth_time * 0.5)
 	tween.start()
 
 

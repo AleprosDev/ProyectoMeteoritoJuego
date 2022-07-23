@@ -12,7 +12,9 @@ script = ExtResource( 3 )
 position = Vector2( 493, 294 )
 gravity_scale = 0.0
 can_sleep = false
+angular_damp = 10.0
 script = ExtResource( 2 )
+potencia_rotacion = 350
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 4 )
