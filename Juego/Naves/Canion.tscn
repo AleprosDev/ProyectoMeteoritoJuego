@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Canion.gd" type="Script" id=1]
-[ext_resource path="res://Juego/Naves/Proyectiles/Proyectil.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Juego/Naves/Proyectiles/ProyectilPlayer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Juego/Naves/Proyectiles/laserPrincipal.ogg" type="AudioStream" id=3]
 
 [node name="Canion" type="Node2D"]

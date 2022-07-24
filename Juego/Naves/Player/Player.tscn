@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Juego/Naves/Player/player_orange.png" type="Texture" id=1]
+[ext_resource path="res://Juego/Naves/Player/nave.png" type="Texture" id=1]
 [ext_resource path="res://Juego/Naves/Proyectiles/LaserBeam2D.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Juego/Naves/Canion.tscn" type="PackedScene" id=3]
 
@@ -16,6 +16,7 @@ linear_damp = 1.0
 angular_damp = 5.0
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 2, 0 )
 rotation = 1.5708
 texture = ExtResource( 1 )
 
@@ -31,11 +32,11 @@ position = Vector2( -1, 0 )
 cadencia_disparo = 0.3
 
 [node name="PuntoIzquierdo" parent="Canion" index="0"]
-position = Vector2( 12, -38 )
+position = Vector2( 7, -38 )
 scale = Vector2( 2, 2 )
 
 [node name="PuntoDerecho" parent="Canion" index="1"]
-position = Vector2( 12, 38 )
+position = Vector2( 7, 38 )
 scale = Vector2( 2, 2 )
 
 [node name="DisparosFX" parent="Canion" index="2"]
