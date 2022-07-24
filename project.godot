@@ -63,7 +63,7 @@ config/icon="res://portada_icono.png"
 
 [autoload]
 
-Eventos="*res://Juego/Autoloads/Eventos.gd"
+Eventos="*res://Eventos.gd"
 
 [display]
 
