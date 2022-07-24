@@ -5,6 +5,7 @@ extends RigidBody2D
 ## Atributos Export
 export var potencia_motor: int = 25
 export var potencia_rotacion: int = 250
+export var estela_maxima: int = 150
 
 ## Atributos
 var empuje:Vector2 = Vector2.ZERO
@@ -13,39 +14,33 @@ var dir_rotacion: int = 0
 ## Atributos onready
 onready var canion:Canion = $Canion
 onready var laser:RayoLaser = $LaserBeam2D
+onready var estela: Estela = $EstelaPuntoInicio/Trail2D
+onready var motor_sfx: Motor = $MotorSFX
 
 ## Metodos
 func _unhandled_input(event: InputEvent) -> void:
-	#Disparo rayo
-	#if event.is_action_pressed("disparo_secundario", true):
-	#	if event.button_index == BUTTON_RIGHT and event.pressed:
-	#		laser.set_is_casting(true)
-
-	#if event.is_action_released("disparo_secundario", false):
-	#	if event.button_index == BUTTON_RIGHT and event.pressed == false:
-	#		laser.set_is_casting(false)
-
 			
 	#Disparo rayo
 	if event.is_action_pressed("disparo_secundario"):
 		laser.set_is_casting(true)
-		print(laser)
-		print(event)
+
 		
 	if event.is_action_released("disparo_secundario"):
 		laser.set_is_casting(false)
-		print(laser)
-		print(event)
-		
-
-
-
-			
-			
-
-		
 	
-
+	#Control Estela y control motor
+	if event.is_action_pressed("mover_adelante"):
+		estela.set_max_points(estela_maxima)
+		motor_sfx.sonido_on()
+	elif event.is_action_pressed("mover_atras"):
+		estela.set_max_points(0)
+		motor_sfx.sonido_on()
+		
+	if (event.is_action_released("mover_adelante")
+		or event.is_action_released("mover_atras")):
+			motor_sfx.sonido_off()
+	
+		
 
 func _integrate_forces(state: Physics2DDirectBodyState) -> void:
 	apply_central_impulse(empuje.rotated(rotation))

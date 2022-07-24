@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ruidoMotor.ogg-790d443879782e5ff120e817173f61b0.oggstr"
+
+[deps]
+
+source_file="res://Juego/Naves/Player/ruidoMotor.ogg"
+dest_files=[ "res://.import/ruidoMotor.ogg-790d443879782e5ff120e817173f61b0.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
