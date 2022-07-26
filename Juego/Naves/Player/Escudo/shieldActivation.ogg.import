@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/shieldActivation.ogg-6b2c6e5267571bf2a739ccb28d93f4fe.oggstr"
+
+[deps]
+
+source_file="res://Juego/Naves/Player/Escudo/shieldActivation.ogg"
+dest_files=[ "res://.import/shieldActivation.ogg-6b2c6e5267571bf2a739ccb28d93f4fe.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
