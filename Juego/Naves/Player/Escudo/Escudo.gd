@@ -46,3 +46,6 @@ func _on_AnimationPlayer_animation_finished(anim_name: String) -> void:
 	if anim_name == "activando" and esta_activado:
 		$AnimationPlayer.play("activado")
 		set_process(true)
+
+func _on_Escudo_body_entered(body: Node	) -> void:
+	body.queue_free()
