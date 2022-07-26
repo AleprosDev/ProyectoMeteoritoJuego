@@ -143,7 +143,7 @@ anims/SPAWN = SubResource( 8 )
 
 [node name="ImpactosSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
-volume_db = -5.909
+volume_db = -11.0
 bus = "SFX"
 
 [node name="Escudo" parent="." instance=ExtResource( 8 )]

@@ -7,7 +7,7 @@ var esta_activado:bool = false setget ,get_esta_activado
 
 ## Variables export
 export var energia: float = 8.0
-export var radio_desgaste:float = -1.6
+export var radio_desgaste:float = -1.0
 
 
 ## Setters y getters
@@ -44,7 +44,7 @@ func desactivar() -> void:
 ## Señales internas
 func _on_AnimationPlayer_animation_finished(anim_name: String) -> void:
 	if anim_name == "activando" and esta_activado:
-		$AnimationPlayer.play("activado")
+		#$AnimationPlayer.play("activado")
 		set_process(true)
 
 func _on_Escudo_body_entered(body: Node	) -> void:
