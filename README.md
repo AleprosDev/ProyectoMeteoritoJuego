@@ -1,15 +1,13 @@
-## ProyectoMeteoritoJuego
-Un juego de naves hecho en Godot para la plataforma Cenit, 2022
-##### Proyecto generado por el espacio del Gobierno del Chaco 2021-2022, para aprendizaje sobre el desarrollo de videojuegos.
-### Descripcion
-Estamos al mando de una nave espacial que intenta sobrevivir a un ambiente constantemente hostil. La nave tiene diferentes formas de atacar, ya sea con los laseres comunes como tambien
-una habilidad especial (la cual necesita recargarse). Tenemos que tener en cuenta tambien nuestra barra de combustible, que va agotandose mientras nos movemos y solo puede llenarse en estaciones
-de gasolina despergidas por toda la galaxia.
+# Meteoritos
 
-**Genero de juego:** shmup 2D
+***
+Meteoritos es un juego del tipo shmup 2D para PC donde debemos controlar la nave comandada por N-Pilot para escapar de los enemigos y llegar hasta los rele de masa que nos conducen a otras galaxias. Ten cuidado con la lluvia de meteoritos, las naves enemigas que custodian las bases, las que pueden aparecer en cualquier momento y muchas cosas mas. Sirvete de tu disparo principal, tu rayo secundario y tu escudo, pero no olvides que estos ultimos deben recargarse en las estaciones de recarga.
+***
+***Engine:*** Godot v3.2.2
 
-**Engine:** Godot 3.4.4
+***Lenguaje:*** GDScript
 
-**Lenguaje:** GDscript
+***Plataforma:*** PC
 
-**Plataforma:** PC
+***Genero:*** Shmup
+***

@@ -1,13 +1,10 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Juego/Naves/Player/ruidoMotor.ogg" type="AudioStream" id=1]
+[ext_resource path="res://Juego/Naves/Player/motor.ogg" type="AudioStream" id=1]
 [ext_resource path="res://Juego/Naves/Player/Motor/MotorSFX.gd" type="Script" id=2]
 
 [node name="MotorSFX" type="AudioStreamPlayer2D"]
-position = Vector2( -15.6667, 1.33552e-06 )
-scale = Vector2( 0.983333, 0.525 )
 stream = ExtResource( 1 )
-volume_db = 12.38
 bus = "SFX"
 script = ExtResource( 2 )
 

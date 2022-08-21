@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/shoot_player.ogg-43a4553a7741e284f7d5a468ae36e5d9.oggstr"
+
+[deps]
+
+source_file="res://Juego/Proyectiles/shoot_player.ogg"
+dest_files=[ "res://.import/shoot_player.ogg-43a4553a7741e284f7d5a468ae36e5d9.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

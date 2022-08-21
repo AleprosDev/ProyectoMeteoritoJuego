@@ -6,11 +6,11 @@ export_presets.cfg
 # Imported translations (automatically generated from CSV files)
 *.translation
 
-# Mono-specifics ignores
+# Mono-specific ignores
 .mono/
 data_*/
 
-# Carpetas extras para ignorar (descomentar segun necesidad)
+# Carpetas extras para ignorar (descomentar según necesidad)
 Builds/
 #Documentation/
 TemporalAssets/

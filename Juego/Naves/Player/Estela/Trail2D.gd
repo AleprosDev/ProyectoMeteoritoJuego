@@ -1,32 +1,23 @@
-#Trail.gd
 tool
-
 class_name Estela
 extends Line2D
 
 export var is_emitting := false setget set_emitting
-
-# Distance in pixels between vertices. A higher resolution leads to more details.
 export var resolution := 5.0
-# Life of each point in seconds before it is deleted.
 export var lifetime := 0.5
-# Maximum number of points allowed on the curve.
 export var max_points := 100 setget set_max_points
-
-# Optional path to the target node to follow. If not set, the instance follows its parent.
 export var target_path: NodePath
 
 var _points_creation_time := []
 var _last_point := Vector2.ZERO
-var _clock := 0.6
-var _offset := 1
+var _clock := 0.0
+var _offset := 0.0
 
 onready var target: Node2D = get_node_or_null(target_path)
 
-## Setters y getters
+## Setters y Getters
 func set_max_points(valor: int) -> void:
 	max_points = valor
-
 
 func _ready() -> void:
 	if not target:
