@@ -1,60 +1,93 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Juego/Meteorito/MeteoritoSpawner.tscn" type="PackedScene" id=1]
 
+[sub_resource type="SegmentShape2D" id=1]
+a = Vector2( -960, 540 )
+b = Vector2( -961, -541 )
+
+[sub_resource type="SegmentShape2D" id=2]
+a = Vector2( 960, 539 )
+b = Vector2( 959, -540 )
+
+[sub_resource type="SegmentShape2D" id=3]
+a = Vector2( -960, -541 )
+b = Vector2( 959, -540 )
+
+[sub_resource type="SegmentShape2D" id=4]
+a = Vector2( 961, 539 )
+b = Vector2( -960, 540 )
+
+[sub_resource type="SegmentShape2D" id=5]
+a = Vector2( -1333, 889 )
+b = Vector2( -1333, -841 )
+
+[sub_resource type="SegmentShape2D" id=6]
+a = Vector2( 1352, 889 )
+b = Vector2( 1352, -852 )
+
+[sub_resource type="SegmentShape2D" id=7]
+a = Vector2( 1352, -847 )
+b = Vector2( -1339, -847 )
+
+[sub_resource type="SegmentShape2D" id=8]
+a = Vector2( 1347, 894 )
+b = Vector2( -1339, 894 )
+
 [node name="Node2D" type="Node2D"]
+__meta__ = {
+"_edit_horizontal_guides_": [ -845.0, 899.0 ],
+"_edit_vertical_guides_": [ -1335.0, 1356.0 ]
+}
 
 [node name="BordesNaveJugador" type="Node2D" parent="."]
 
 [node name="BordeIzquierdo" type="StaticBody2D" parent="BordesNaveJugador"]
-collision_layer = 0
-collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BordesNaveJugador/BordeIzquierdo"]
+shape = SubResource( 1 )
+one_way_collision_margin = 6.8
 
 [node name="BordeDerecho" type="StaticBody2D" parent="BordesNaveJugador"]
-collision_layer = 0
-collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BordesNaveJugador/BordeDerecho"]
+shape = SubResource( 2 )
 
 [node name="BordeSuperior" type="StaticBody2D" parent="BordesNaveJugador"]
-collision_layer = 0
-collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BordesNaveJugador/BordeSuperior"]
+shape = SubResource( 3 )
 
 [node name="BordeInferior" type="StaticBody2D" parent="BordesNaveJugador"]
-collision_layer = 0
-collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BordesNaveJugador/BordeInferior"]
+shape = SubResource( 4 )
 
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="DetectorIzquierdo" type="Area2D" parent="Node2D"]
 collision_layer = 0
-collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/DetectorIzquierdo"]
+shape = SubResource( 5 )
 
 [node name="DetectorDerecho" type="Area2D" parent="Node2D"]
 collision_layer = 0
-collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/DetectorDerecho"]
+shape = SubResource( 6 )
 
 [node name="DetectorSuperior" type="Area2D" parent="Node2D"]
 collision_layer = 0
-collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/DetectorSuperior"]
+shape = SubResource( 7 )
 
 [node name="DetectorInferior" type="Area2D" parent="Node2D"]
 collision_layer = 0
-collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/DetectorInferior"]
+shape = SubResource( 8 )
 
 [node name="Spawners" type="Node2D" parent="."]
 
@@ -89,19 +122,22 @@ position = Vector2( 1108, -72 )
 position = Vector2( 1056, -328 )
 
 [node name="MeteoritoSpawner11" parent="Spawners" instance=ExtResource( 1 )]
-position = Vector2( 600, -640 )
+position = Vector2( 1098, 375 )
 
 [node name="MeteoritoSpawner12" parent="Spawners" instance=ExtResource( 1 )]
-position = Vector2( 216, -620 )
+position = Vector2( 616, -669 )
 
 [node name="MeteoritoSpawner13" parent="Spawners" instance=ExtResource( 1 )]
-position = Vector2( -160, -632 )
+position = Vector2( 190, -699 )
 
 [node name="MeteoritoSpawner14" parent="Spawners" instance=ExtResource( 1 )]
-position = Vector2( -468, -656 )
+position = Vector2( -401, -638 )
 
 [node name="MeteoritoSpawner15" parent="Spawners" instance=ExtResource( 1 )]
-position = Vector2( -784, -640 )
+position = Vector2( -811, -653 )
+
+[node name="MeteoritoSpawner16" parent="Spawners" instance=ExtResource( 1 )]
+position = Vector2( -1127, 491 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( -4, 84 )
+visible = false

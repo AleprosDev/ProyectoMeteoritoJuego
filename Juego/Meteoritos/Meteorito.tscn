@@ -433,7 +433,7 @@ gravity_scale = 0.0
 linear_damp = 0.0
 angular_damp = 0.0
 script = ExtResource( 3 )
-vel_lineal_base = Vector2( 100, 100 )
+vel_lineal_base = Vector2( 200, 200 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )

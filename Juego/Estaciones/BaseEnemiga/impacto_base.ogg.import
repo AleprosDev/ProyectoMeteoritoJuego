@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/impacto_base.ogg-5732fcc1129ba011a1431e506f369ef7.oggstr"
+
+[deps]
+
+source_file="res://Juego/Estaciones/BaseEnemiga/impacto_base.ogg"
+dest_files=[ "res://.import/impacto_base.ogg-5732fcc1129ba011a1431e506f369ef7.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

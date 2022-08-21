@@ -2,9 +2,10 @@
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://Juego/Naves/Enemigos/EnemigoDummy.gd" type="Script" id=2]
-[ext_resource path="res://Juego/Naves/Enemigos/AreaColision.gd" type="Script" id=3]
+[ext_resource path="res://Juego/Estaciones/BaseEnemiga/AreaColision.gd" type="Script" id=3]
 [ext_resource path="res://Juego/Proyectiles/Canion.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Juego/Proyectiles/ProyectilEnemigo.tscn" type="PackedScene" id=5]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 139.797, 134.452 )

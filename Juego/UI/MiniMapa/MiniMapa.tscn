@@ -1,0 +1,86 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Juego/UI/MiniMapa/mini_map_rect.png" type="Texture" id=1]
+[ext_resource path="res://Juego/UI/MiniMapa/Iconos/icono_player.png" type="Texture" id=2]
+[ext_resource path="res://Juego/UI/MiniMapa/MiniMapa.gd" type="Script" id=3]
+[ext_resource path="res://Juego/UI/MiniMapa/Iconos/icono_base_C.png" type="Texture" id=4]
+[ext_resource path="res://Juego/UI/MiniMapa/Iconos/icono_estacion.png" type="Texture" id=5]
+[ext_resource path="res://Juego/UI/MiniMapa/Iconos/icono_rele.png" type="Texture" id=6]
+[ext_resource path="res://Juego/UI/MiniMapa/Iconos/icono_interceptor.png" type="Texture" id=7]
+
+[node name="MiniMapa" type="MarginContainer"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -159.0
+margin_top = -187.326
+margin_right = 159.0
+margin_bottom = -11.3264
+rect_min_size = Vector2( 318, 176 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CuadroMiniMapa" type="NinePatchRect" parent="."]
+margin_right = 318.0
+margin_bottom = 176.0
+texture = ExtResource( 1 )
+patch_margin_left = 5
+
+[node name="ContenedorIconos" type="MarginContainer" parent="CuadroMiniMapa"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = -5.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ZonaRenderizadoMiniMapa" type="TextureRect" parent="CuadroMiniMapa/ContenedorIconos"]
+margin_right = 308.0
+margin_bottom = 166.0
+
+[node name="IconoPlayer" type="Sprite" parent="CuadroMiniMapa/ContenedorIconos/ZonaRenderizadoMiniMapa"]
+position = Vector2( 77.0339, 64.1301 )
+rotation = 1.5708
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 2 )
+
+[node name="IconoBaseEnemiga" type="Sprite" parent="CuadroMiniMapa/ContenedorIconos/ZonaRenderizadoMiniMapa"]
+visible = false
+modulate = Color( 1, 0, 0.0705882, 1 )
+position = Vector2( 146.371, 120.915 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="IconoEstacion" type="Sprite" parent="CuadroMiniMapa/ContenedorIconos/ZonaRenderizadoMiniMapa"]
+visible = false
+modulate = Color( 1, 0, 0.654902, 1 )
+position = Vector2( 230.517, 73.5391 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 5 )
+
+[node name="IconoRele" type="Sprite" parent="CuadroMiniMapa/ContenedorIconos/ZonaRenderizadoMiniMapa"]
+visible = false
+modulate = Color( 0, 0.768627, 0.733333, 1 )
+position = Vector2( 55, 120 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+
+[node name="IconoInterceptor" type="Sprite" parent="CuadroMiniMapa/ContenedorIconos/ZonaRenderizadoMiniMapa"]
+visible = false
+modulate = Color( 0.921569, 0.603922, 0, 1 )
+position = Vector2( 33, 83.5 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 7 )
+
+[node name="TweenVisibilidad" type="Tween" parent="."]
+
+[node name="TimerVisibilidad" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="TimerVisibilidad" to="." method="_on_TimerVisibilidad_timeout"]

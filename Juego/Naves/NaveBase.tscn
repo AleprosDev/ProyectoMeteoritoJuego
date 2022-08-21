@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Juego/Naves/NaveBase.gd" type="Script" id=1]
+[ext_resource path="res://Juego/Naves/Player/impact.ogg" type="AudioStream" id=2]
+[ext_resource path="res://Juego/Naves/BarraSalud.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Juego/Proyectiles/Canion.tscn" type="PackedScene" id=4]
+
+[node name="NaveBase" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 0.891914 )
+
+[node name="Canion" parent="." instance=ExtResource( 4 )]
+position = Vector2( -1.12373, 0 )
+cadencia_disparo = 0.25
+velocidad_proyectil = 1500
+
+[node name="ImpactoSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+bus = "SFX"
+
+[node name="BarraSalud" parent="." instance=ExtResource( 3 )]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

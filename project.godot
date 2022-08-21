@@ -9,15 +9,65 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "ProgressBar",
+"class": "BarraSalud",
+"language": "GDScript",
+"path": "res://Juego/Naves/BarraSalud.gd"
+}, {
+"base": "Node2D",
+"class": "BaseEnemiga",
+"language": "GDScript",
+"path": "res://Juego/Estaciones/BaseEnemiga/BaseEnemiga.gd"
+}, {
+"base": "Camera2D",
+"class": "CamaraJuego",
+"language": "GDScript",
+"path": "res://Juego/Niveles/CamaraJuego.gd"
+}, {
+"base": "CamaraJuego",
+"class": "CamaraPlayer",
+"language": "GDScript",
+"path": "res://Juego/Naves/Player/CamaraPlayer.gd"
+}, {
 "base": "Node2D",
 "class": "Canion",
 "language": "GDScript",
 "path": "res://Juego/Proyectiles/Canion.gd"
 }, {
+"base": "NinePatchRect",
+"class": "ContenedorInformacion",
+"language": "GDScript",
+"path": "res://Juego/UI/HUD/ContendedorInformacion.gd"
+}, {
+"base": "ContenedorInformacion",
+"class": "ContenedorInformacionEnergia",
+"language": "GDScript",
+"path": "res://Juego/UI/HUD/ContenedorInformacionEnergia.gd"
+}, {
+"base": "NaveBase",
+"class": "EnemigoBase",
+"language": "GDScript",
+"path": "res://Juego/Naves/Enemigos/EnemigoBase.gd"
+}, {
+"base": "EnemigoBase",
+"class": "EnemigoInterceptor",
+"language": "GDScript",
+"path": "res://Juego/Naves/Enemigos/EnemigoInterceptor.gd"
+}, {
+"base": "EnemigoBase",
+"class": "EnemigoOrbital",
+"language": "GDScript",
+"path": "res://Juego/Naves/Enemigos/EnemigoOrbital.gd"
+}, {
 "base": "Area2D",
 "class": "Escudo",
 "language": "GDScript",
 "path": "res://Juego/Naves/Player/Escudo/Escudo.gd"
+}, {
+"base": "Node2D",
+"class": "EstacionRecarga",
+"language": "GDScript",
+"path": "res://Juego/Estaciones/Recarga/EstacionRecarga.gd"
 }, {
 "base": "Line2D",
 "class": "Estela",
@@ -44,12 +94,17 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Juego/Naves/Player/Motor/MotorSFX.gd"
 }, {
+"base": "RigidBody2D",
+"class": "NaveBase",
+"language": "GDScript",
+"path": "res://Juego/Naves/NaveBase.gd"
+}, {
 "base": "Node2D",
 "class": "Nivel",
 "language": "GDScript",
 "path": "res://Juego/Niveles/Nivel.gd"
 }, {
-"base": "RigidBody2D",
+"base": "NaveBase",
 "class": "Player",
 "language": "GDScript",
 "path": "res://Juego/Naves/Player/Player.gd"
@@ -63,31 +118,56 @@ _global_script_classes=[ {
 "class": "RayoLaser",
 "language": "GDScript",
 "path": "res://Juego/Proyectiles/Laser/LaserBeam2D.gd"
+}, {
+"base": "Node2D",
+"class": "ReleDeMasa",
+"language": "GDScript",
+"path": "res://Juego/Estaciones/Rele/ReleMasa.gd"
+}, {
+"base": "Node2D",
+"class": "SectorMeteoritos",
+"language": "GDScript",
+"path": "res://Juego/Meteoritos/SectorMeteoritos.gd"
 } ]
 _global_script_class_icons={
+"BarraSalud": "",
+"BaseEnemiga": "",
+"CamaraJuego": "",
+"CamaraPlayer": "",
 "Canion": "",
+"ContenedorInformacion": "",
+"ContenedorInformacionEnergia": "",
+"EnemigoBase": "",
+"EnemigoInterceptor": "",
+"EnemigoOrbital": "",
 "Escudo": "",
+"EstacionRecarga": "",
 "Estela": "",
 "ExplosionMeteorito": "",
 "Meteorito": "",
 "MeteoritoSpawner": "",
 "Motor": "",
+"NaveBase": "",
 "Nivel": "",
 "Player": "",
 "Proyectil": "",
-"RayoLaser": ""
+"RayoLaser": "",
+"ReleDeMasa": "",
+"SectorMeteoritos": ""
 }
 
 [application]
 
 config/name="Meteoritos_Juego"
 config/description="Un juego shmup 2D de exploracion espacial y mucha aventura"
-run/main_scene="res://Juego/Niveles/NivelTest.tscn"
+run/main_scene="res://Juego/UI/Menus/MenuPrincipal.tscn"
 config/icon="res://icono_juego.png"
 
 [autoload]
 
 Eventos="*res://Juego/Autoloads/Eventos.gd"
+DatosJuego="*res://Juego/Autoloads/DatosJuego.gd"
+MusicaJuego="*res://Juego/Autoloads/MusicaJuego.tscn"
 
 [debug]
 
@@ -102,6 +182,7 @@ window/size/resizable=false
 window/size/always_on_top=true
 window/size/test_width=1280
 window/size/test_height=720
+window/vsync/use_vsync=false
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
@@ -146,6 +227,31 @@ escudo={
 "events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":3,"pressed":false,"doubleclick":false,"script":null)
  ]
 }
+zoom_acercar={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":4,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+zoom_alejar={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":5,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+recarga_escudo={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":82,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+recarga_laser={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":69,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+minimapa={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777218,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
 
 [layer_names]
 
@@ -154,6 +260,7 @@ escudo={
 2d_physics/layer_3="meteorito"
 2d_physics/layer_4="proyectil_player"
 2d_physics/layer_5="proyectil_enemigo"
+2d_physics/layer_6="base_enemiga"
 
 [physics]
 

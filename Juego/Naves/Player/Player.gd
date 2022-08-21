@@ -1,33 +1,32 @@
 #Player.gd
 class_name Player
-extends RigidBody2D
-
-## Enums
-enum ESTADO {SPAWN, VIVO, INVENCIBLE, MUERTO}
+extends NaveBase
 
 ## Atributos Export
-export var potencia_motor:int = 20
-export var potencia_rotacion:int = 280
+export var potencia_motor:int = 18
+export var potencia_rotacion:int = 260
 export var estela_maxima:int = 150
-export var hitpoints:float = 15.0
 
 ## Atributos
-var estado_actual:int = ESTADO.SPAWN
 var empuje:Vector2 = Vector2.ZERO
 var dir_rotacion:int = 0
 
 ## Atributos Onready
-onready var canion:Canion = $Canion
-onready var laser:RayoLaser = $LaserBeam2D
+onready var laser:RayoLaser = $LaserBeam2D setget ,get_laser
 onready var estela:Estela = $EstelaPuntoInicio/Trail2D
 onready var motor_sfx:Motor = $MotorSFX
-onready var colisionador:CollisionShape2D = $CollisionShape2D
-onready var impacto_sfx:AudioStreamPlayer = $ImpactoSFX
-onready var escudo:Escudo = $Escudo
+onready var escudo:Escudo = $Escudo setget ,get_escudo
+
+## Setters y Getters
+func get_laser() -> RayoLaser:
+	return laser
+
+func get_escudo() -> Escudo:
+	return escudo
 
 ## Metodos
 func _ready() -> void:
-	controlador_estados(estado_actual)
+	DatosJuego.set_player_actual(self)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if not esta_input_activo():
@@ -44,14 +43,13 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("escudo") and not escudo.get_esta_activado():
 		escudo.activar()
 	
-	# Control estela y sonido motor
+	# Control estela
 	if event.is_action_pressed("mover_adelante"):
 		estela.set_max_points(estela_maxima)
-		motor_sfx.sonido_on()
 	elif event.is_action_pressed("mover_atras"):
 		estela.set_max_points(0)
-		motor_sfx.sonido_on()
 	
+	# Apagado sonido Motor
 	if (event.is_action_released("mover_adelante")
 		or event.is_action_released("mover_atras")):
 			motor_sfx.sonido_off()
@@ -64,36 +62,18 @@ func _process(_delta: float) -> void:
 	player_input()
 
 ## Metodos Custom
-func controlador_estados(nuevo_estado: int) -> void:
-	match nuevo_estado:
-		ESTADO.SPAWN:
-			colisionador.set_deferred("disabled", true)
-			canion.set_puede_disparar(false)
-		ESTADO.VIVO:
-			colisionador.set_deferred("disabled", false)
-			canion.set_puede_disparar(true)
-		ESTADO.INVENCIBLE:
-			colisionador.set_deferred("disabled", true)
-		ESTADO.MUERTO:
-			colisionador.set_deferred("disabled", true)
-			canion.set_puede_disparar(true)
-			Eventos.emit_signal("nave_destruida", global_position, 3)
-			queue_free()
-		_:
-			printerr("Error de estado")
-		
-	estado_actual = nuevo_estado
-
 func player_input() -> void:
 	if not esta_input_activo():
 		return
 	
-	# Empuje
+	# Empuje y Encendido sonido Motor
 	empuje = Vector2.ZERO
 	if Input.is_action_pressed("mover_adelante"):
 		empuje = Vector2(potencia_motor, 0)
+		motor_sfx.sonido_on()
 	elif Input.is_action_pressed("mover_atras"):
 		empuje = Vector2(-potencia_motor, 0)
+		motor_sfx.sonido_on()
 	
 	# Rotacion
 	dir_rotacion = 0
@@ -115,23 +95,8 @@ func esta_input_activo() -> bool:
 	
 	return true
 
-func recibir_danio(danio: float) -> void:
-	hitpoints -= danio
-	if hitpoints <= 0.0:
-		destruir()
-	
-	impacto_sfx.play()
-
-func destruir() -> void:
-	controlador_estados(ESTADO.MUERTO)
-
-## Señales internas
-func _on_AnimationPlayer_animation_finished(anim_name: String) -> void:
-	if anim_name == "spawn":
-		controlador_estados(ESTADO.VIVO)
-
-
-func _on_body_entered(body: Node) -> void:
-	if body is Meteorito:
-		body.destruir()
-		destruir()
+func desactivar_controles() -> void:
+	controlador_estados(ESTADO.SPAWN)
+	empuje = Vector2.ZERO
+	motor_sfx.sonido_off()
+	laser.set_is_casting(false)

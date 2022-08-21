@@ -233,7 +233,7 @@ tracks/8/keys = {
 }
 
 [node name="Explosion" type="Node2D"]
-z_index = 1
+z_index = 100
 z_as_relative = false
 
 [node name="SmokeParticles2D" type="Particles2D" parent="."]
