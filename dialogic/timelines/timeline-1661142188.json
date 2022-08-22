@@ -1,0 +1,87 @@
+{
+	"events": [
+		{
+			"animation": "2-fade_in_up.gd",
+			"animation_length": 0.05,
+			"animation_wait": true,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1661140280.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": true,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 15
+		},
+		{
+			"character": "character-1661140280.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Donde estoy?"
+		},
+		{
+			"animation": "2-fade_in_up.gd",
+			"animation_length": 0.05,
+			"animation_wait": true,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1661144157.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": true,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			},
+			"type": 0,
+			"z_index": 15
+		},
+		{
+			"character": "character-1661144157.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Tu nave me temo a perdido el rumbo capitan. Estamos mas alla de la frontera de Epsilon. Calculando distancias..."
+		},
+		{
+			"character": "character-1661144157.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Nos encontramos mas alla de Setria, en el borde federal de comercio galactico capitan."
+		},
+		{
+			"character": "character-1661140280.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Comunicate con la guardia Junior, e indicame condiciones de la nave y del ambiente."
+		},
+		{
+			"character": "character-1661144157.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "La nave se encuentra en condiciones ideales capitan, aunque es imposible calcular la zona dado que no se encuentra registrada en mi base de datos."
+		},
+		{
+			"character": "character-1661144157.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Es territorio desconocido capitan."
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.4",
+		"file": "timeline-1661142188.json",
+		"name": "intro_epilogo"
+	}
+}

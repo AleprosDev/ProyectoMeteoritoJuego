@@ -1,0 +1,57 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform float tile_factor = 4.0;
+uniform float aspect_ratio = 1.5;
+
+uniform sampler2D uv_offset_texture : hint_black;
+uniform vec2 uv_offset_scale = vec2(0.2, 0.2);
+uniform float wave_size = 0.1;
+
+uniform vec2 time_scale = vec2(0.05, 0.08);
+
+uniform vec2 time_factor = vec2(5.0, 5.0);
+uniform vec2 offset_factor = vec2(5.0, 5.0);
+uniform vec2 amplitude = vec2(0.05, 0.05);
+
+
+
+
+
+void fragment() {
+	vec2 tiled_uvs = UV * tile_factor;
+	tiled_uvs.y *= aspect_ratio;
+	vec2 base_uv_offset = UV * uv_offset_scale;
+	base_uv_offset += TIME * time_scale;
+	
+	vec2 wave_uv_offset;
+	wave_uv_offset.x += sin(TIME * time_factor.x + (tiled_uvs.x + tiled_uvs.y) * offset_factor.x);
+	wave_uv_offset.y += cos(TIME * time_factor.y + (tiled_uvs.x + tiled_uvs.y) * offset_factor.y);
+	
+	vec2 texture_based_offset = texture(uv_offset_texture, base_uv_offset).rg;
+	texture_based_offset = texture_based_offset * 3.0 - 2.0;
+	texture_based_offset *= wave_size;
+	vec2 adjusted_uv = UV * tile_factor;
+	adjusted_uv.y *= aspect_ratio;
+	
+//	COLOR = texture(TEXTURE, tiled_uvs);
+//	COLOR = texture(TEXTURE, tiled_uvs + wave_uv_offset * amplitude);
+	NORMALMAP = texture(NORMAL_TEXTURE, UV + texture_based_offset).rgb;
+	COLOR = vec4(wave_uv_offset, vec2(0.0, 1.0));
+	COLOR = vec4(UV * aspect_ratio, vec2(0.0, 1.0));
+//	COLOR = texture(TEXTURE, adjusted_uv + texture_based_offset);
+}
+"
+
+[resource]
+shader = SubResource( 1 )
+shader_param/tile_factor = 4.0
+shader_param/aspect_ratio = 1.5
+shader_param/uv_offset_scale = Vector2( 0.2, 0.2 )
+shader_param/wave_size = 0.1
+shader_param/time_scale = Vector2( 0.05, 0.08 )
+shader_param/time_factor = Vector2( 5, 5 )
+shader_param/offset_factor = Vector2( 5, 5 )
+shader_param/amplitude = Vector2( 0.05, 0.05 )

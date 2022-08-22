@@ -1,13 +1,76 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Juego/Fuentes/kenney_future_font.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Juego/UI/Menus/MenuPrincipal.gd" type="Script" id=2]
+[ext_resource path="res://TemporalAssets/guardar_cosas_propias/efecto_agua_fondo_intro2.png" type="Texture" id=4]
+[ext_resource path="res://Juego/UI/Menus/water.gd" type="Script" id=5]
+[ext_resource path="res://TemporalAssets/guardar_cosas_propias/light.png" type="Texture" id=6]
+[ext_resource path="res://TemporalAssets/guardar_cosas_propias/water_normal.png" type="Texture" id=8]
 
-[sub_resource type="DynamicFont" id=1]
-size = 80
-outline_size = 4
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 1 )
+[sub_resource type="Shader" id=5]
+code = "shader_type canvas_item;
+
+uniform float tile_factor = 10.0;
+uniform float aspect_ratio = 0.5;
+
+uniform vec2 time_factor = vec2(2.0, 3.0);
+uniform vec2 offset_factor = vec2(5.0, 2.0);
+uniform vec2 amplitude = vec2(0.05, 0.05);
+
+void fragment() {
+	vec2 tiled_uvs = UV * tile_factor;
+	tiled_uvs.y *= aspect_ratio;
+	
+	vec2 wave_uv_offset;
+	wave_uv_offset.x += sin(TIME * time_factor.x + (tiled_uvs.x + tiled_uvs.y) * offset_factor.x);
+	wave_uv_offset.y += cos(TIME * time_factor.y + (tiled_uvs.x + tiled_uvs.y) * offset_factor.y);
+	
+//	COLOR = texture(TEXTURE, tiled_uvs);
+	COLOR = texture(TEXTURE, tiled_uvs + wave_uv_offset * amplitude);
+//	COLOR = vec4(wave_uv_offset, vec2(0.0, 1.0));
+//	COLOR = vec4(UV * aspect_ratio, vec2(0.0, 1.0));
+}
+"
+
+[sub_resource type="ShaderMaterial" id=6]
+shader = SubResource( 5 )
+shader_param/tile_factor = 0.8
+shader_param/aspect_ratio = 1.0
+shader_param/time_factor = Vector2( 1, 1 )
+shader_param/offset_factor = Vector2( 3, 3 )
+shader_param/amplitude = Vector2( 0.01, 0.01 )
+
+[sub_resource type="Shader" id=7]
+code = "shader_type canvas_item;
+
+uniform float tile_factor = 10.0;
+uniform float aspect_ratio = 0.5;
+
+uniform vec2 time_factor = vec2(2.0, 3.0);
+uniform vec2 offset_factor = vec2(5.0, 2.0);
+uniform vec2 amplitude = vec2(0.05, 0.05);
+
+void fragment() {
+	vec2 tiled_uvs = UV * tile_factor;
+	tiled_uvs.y *= aspect_ratio;
+	
+	vec2 wave_uv_offset;
+	wave_uv_offset.x += sin(TIME * time_factor.x + (tiled_uvs.x + tiled_uvs.y) * offset_factor.x);
+	wave_uv_offset.y += cos(TIME * time_factor.y + (tiled_uvs.x + tiled_uvs.y) * offset_factor.y);
+	
+//	COLOR = texture(TEXTURE, tiled_uvs);
+	COLOR = texture(TEXTURE, tiled_uvs + wave_uv_offset * amplitude);
+//	COLOR = vec4(wave_uv_offset, vec2(0.0, 1.0));
+//	COLOR = vec4(UV * aspect_ratio, vec2(0.0, 1.0));
+}
+"
+
+[sub_resource type="ShaderMaterial" id=8]
+shader = SubResource( 7 )
+shader_param/tile_factor = 10.0
+shader_param/aspect_ratio = 0.5
+shader_param/time_factor = Vector2( 2, 3 )
+shader_param/offset_factor = Vector2( 5, 2 )
+shader_param/amplitude = Vector2( 0.05, 0.05 )
 
 [node name="MenuPrincipal" type="Node"]
 script = ExtResource( 2 )
@@ -16,40 +79,65 @@ nivel_inicial = "res://Juego/Niveles/Nivel1.tscn"
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+color = Color( 0.188235, 0.211765, 0.356863, 1 )
 
-[node name="BotonJugar" type="Button" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0.509804, 0.117647, 0.211765, 1 )
+material = SubResource( 6 )
+position = Vector2( 960, 539.5 )
+scale = Vector2( 1.00104, 0.995371 )
+texture = ExtResource( 4 )
+normal_map = ExtResource( 8 )
+script = ExtResource( 5 )
+
+[node name="Light2D" type="Light2D" parent="Sprite"]
+material = SubResource( 8 )
+position = Vector2( 9.98959, 13.5627 )
+scale = Vector2( 1.63943, 0.919705 )
+texture = ExtResource( 6 )
+texture_scale = 4.57
+color = Color( 0.772549, 0.54902, 0.462745, 0.34902 )
+energy = 4.81
+mode = 2
+range_height = 354.0
+shadow_enabled = true
+shadow_color = Color( 0.596078, 0.196078, 0.196078, 0 )
+shadow_filter_smooth = 4.0
+
+[node name="Salir" type="Button" parent="."]
+anchor_left = 0.441
+anchor_top = 0.414
+anchor_right = 0.59
+anchor_bottom = 0.517
+margin_left = -0.720032
+margin_top = 206.88
+margin_right = 0.199951
+margin_bottom = 194.64
+custom_colors/font_color_disabled = Color( 0.819608, 0.25098, 0.25098, 1 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.447059, 0.105882, 0.105882, 1 )
+custom_colors/font_color_hover = Color( 0.290196, 0.0666667, 0.0666667, 1 )
+custom_colors/font_color_pressed = Color( 0.639216, 0.34902, 0.34902, 1 )
+keep_pressed_outside = true
+text = "SALIR"
+clip_text = true
+
+[node name="Jugar" type="Button" parent="."]
+anchor_left = 0.44
+anchor_top = 0.41
+anchor_right = 0.589
 anchor_bottom = 0.5
-margin_left = -356.0
-margin_top = -225.5
-margin_right = 356.0
-margin_bottom = -22.5
-custom_fonts/font = SubResource( 1 )
-text = "Jugar"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+margin_left = 1.19995
+margin_top = 0.199982
+margin_right = 1.11987
+margin_bottom = 12.0
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.886275, 0.184314, 0.156863, 1 )
+custom_colors/font_color_hover = Color( 0.592773, 0.10388, 0.0781488, 1 )
+custom_colors/font_color_pressed = Color( 0.885742, 0.41209, 0.393567, 1 )
+text = "JUGAR"
+clip_text = true
 
-[node name="BotonSalir" type="Button" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -281.0
-margin_top = 114.0
-margin_right = 281.0
-margin_bottom = 274.0
-custom_fonts/font = SubResource( 1 )
-text = "Salir"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[connection signal="pressed" from="BotonJugar" to="." method="_on_BotonJugar_pressed"]
-[connection signal="pressed" from="BotonSalir" to="." method="_on_BotonSalir_pressed"]
+[connection signal="item_rect_changed" from="Sprite" to="Sprite" method="calculate_aspect_ratio"]
+[connection signal="pressed" from="Salir" to="." method="_on_Salir_pressed"]
+[connection signal="pressed" from="Jugar" to="." method="_on_Jugar_pressed"]

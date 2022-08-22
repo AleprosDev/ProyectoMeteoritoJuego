@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://addons/dialogic/Dialog.tscn" type="PackedScene" id=1]
+[ext_resource path="res://TemporalAssets/guardar_cosas_propias/pxArt.png" type="Texture" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Dialog" parent="." instance=ExtResource( 1 )]
+margin_left = 630.0
+margin_top = 369.0
+margin_right = 630.0
+margin_bottom = 369.0
+timeline = "timeline-1661142188.json"
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 956, 543 )
+scale = Vector2( 2.99375, 3.01667 )
+texture = ExtResource( 2 )
