@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/viaje_galaxia.mp3-112a3cb4f86e545e82b20919636d86fa.mp3str"
+
+[deps]
+
+source_file="res://Juego/UI/Menus/viaje_galaxia.mp3"
+dest_files=[ "res://.import/viaje_galaxia.mp3-112a3cb4f86e545e82b20919636d86fa.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

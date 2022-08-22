@@ -89,17 +89,13 @@ __meta__ = {
 anims/default = SubResource( 1 )
 anims/fade_in = SubResource( 2 )
 
-[node name="InfoZonaRecarga" parent="." groups=[
-"contenedor_info",
-] instance=ExtResource( 3 )]
+[node name="InfoZonaRecarga" parent="." groups=["contenedor_info"] instance=ExtResource( 3 )]
 modulate = Color( 1, 1, 1, 0 )
 
 [node name="Label" parent="InfoZonaRecarga" index="1"]
 text = "En Zona de Recarga"
 
-[node name="InfoMeteoritos" parent="." groups=[
-"contenedor_info",
-] instance=ExtResource( 3 )]
+[node name="InfoMeteoritos" parent="." groups=["contenedor_info"] instance=ExtResource( 3 )]
 modulate = Color( 1, 1, 1, 0 )
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -113,9 +109,7 @@ margin_bottom = 12.5
 text = "Meteoritos Restantes
 5"
 
-[node name="InfoTiempoRestante" parent="." groups=[
-"contenedor_info",
-] instance=ExtResource( 3 )]
+[node name="InfoTiempoRestante" parent="." groups=["contenedor_info"] instance=ExtResource( 3 )]
 modulate = Color( 1, 1, 1, 0 )
 anchor_left = 1.0
 anchor_right = 1.0
@@ -132,9 +126,7 @@ MM:SS"
 [node name="AutoOcultarTimer" parent="InfoTiempoRestante" index="2"]
 wait_time = 3.0
 
-[node name="InfoLaser" parent="." groups=[
-"contenedor_info",
-] instance=ExtResource( 4 )]
+[node name="InfoLaser" parent="." groups=["contenedor_info"] instance=ExtResource( 4 )]
 modulate = Color( 1, 1, 1, 0 )
 anchor_left = 1.0
 anchor_top = 1.0
@@ -151,9 +143,7 @@ anims/mostrar = SubResource( 3 )
 [node name="Label" parent="InfoLaser" index="1"]
 text = "Energia Laser"
 
-[node name="InfoEscudo" parent="." groups=[
-"contenedor_info",
-] instance=ExtResource( 4 )]
+[node name="InfoEscudo" parent="." groups=["contenedor_info"] instance=ExtResource( 4 )]
 modulate = Color( 1, 1, 1, 0 )
 anchor_left = 1.0
 anchor_top = 1.0
@@ -167,9 +157,7 @@ margin_bottom = -104.0
 [node name="Label" parent="InfoEscudo" index="1"]
 text = "Energia Escudo"
 
-[node name="MiniMapa" parent="." groups=[
-"contenedor_info",
-] instance=ExtResource( 5 )]
+[node name="MiniMapa" parent="." groups=["contenedor_info"] instance=ExtResource( 5 )]
 
 [editable path="InfoZonaRecarga"]
 [editable path="InfoMeteoritos"]

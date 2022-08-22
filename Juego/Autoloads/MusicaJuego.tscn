@@ -1,11 +1,12 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Juego/Autoloads/MusicaJuego.gd" type="Script" id=1]
-[ext_resource path="res://Juego/UI/Menus/the-boxer.wav" type="AudioStream" id=2]
+[ext_resource path="res://Juego/UI/Menus/viaje_galaxia.mp3" type="AudioStream" id=2]
 [ext_resource path="res://Juego/UI/Menus/boton.ogg" type="AudioStream" id=3]
 
 [node name="MusicaJuego" type="Node"]
 script = ExtResource( 1 )
+tiempo_transicion = 5.0
 
 [node name="MusicaNivel" type="AudioStreamPlayer" parent="."]
 bus = "Musica"
@@ -19,6 +20,7 @@ bus = "Musica"
 
 [node name="MusicaMenuPrincipal" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
+volume_db = 8.0
 bus = "Musica"
 
 [node name="BotonMenu" type="AudioStreamPlayer" parent="."]
