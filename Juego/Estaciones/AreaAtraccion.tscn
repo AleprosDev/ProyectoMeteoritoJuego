@@ -4,18 +4,18 @@
 [ext_resource path="res://Juego/Estaciones/AreaAtraccion.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 467.308
+radius = 366.722
 
 [node name="AreaAtraccion" type="Area2D"]
+collision_layer = 0
+collision_mask = 3
 space_override = 1
 gravity_point = true
 gravity = 1000.0
-collision_layer = 0
-collision_mask = 3
 script = ExtResource( 2 )
 
 [node name="SpriteZonaRecarga" type="Sprite" parent="."]
-modulate = Color( 0, 0.811765, 1, 0.0784314 )
+modulate = Color( 0, 0.560784, 1, 0.627451 )
 scale = Vector2( 38, 38 )
 texture = ExtResource( 1 )
 

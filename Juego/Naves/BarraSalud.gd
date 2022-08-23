@@ -27,7 +27,7 @@ func controlar_barra(hitpoints_nave: float, mostrar: bool) -> void:
 		tween_visibilidad.interpolate_property(
 				self,
 				"modulate",
-				Color(1,1,1,not mostrar),
+				Color(0.129412, 0.360784, 0.435294,not mostrar),
 				Color(1,1,1,mostrar),
 				1.0,
 				Tween.TRANS_LINEAR,

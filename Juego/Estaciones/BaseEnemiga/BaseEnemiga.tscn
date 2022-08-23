@@ -147,9 +147,7 @@ border_width_bottom = 2
 border_color = Color( 0, 0, 0, 1 )
 border_blend = true
 
-[node name="BaseEnemiga" type="Node2D" groups=[
-"minimapa",
-]]
+[node name="BaseEnemiga" type="Node2D" groups=["minimapa"]]
 z_index = 40
 z_as_relative = false
 script = ExtResource( 6 )

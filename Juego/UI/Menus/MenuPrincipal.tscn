@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
+[ext_resource path="res://new_dynamicfont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Juego/UI/Menus/MenuPrincipal.gd" type="Script" id=2]
 [ext_resource path="res://TemporalAssets/guardar_cosas_propias/efecto_agua_fondo_intro2.png" type="Texture" id=4]
 [ext_resource path="res://Juego/UI/Menus/water.gd" type="Script" id=5]
@@ -105,6 +106,7 @@ shadow_color = Color( 0.596078, 0.196078, 0.196078, 0 )
 shadow_filter_smooth = 4.0
 
 [node name="Salir" type="Button" parent="."]
+modulate = Color( 0.45098, 0.152941, 0.152941, 1 )
 anchor_left = 0.441
 anchor_top = 0.414
 anchor_right = 0.59
@@ -118,23 +120,26 @@ custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0.447059, 0.105882, 0.105882, 1 )
 custom_colors/font_color_hover = Color( 0.290196, 0.0666667, 0.0666667, 1 )
 custom_colors/font_color_pressed = Color( 0.639216, 0.34902, 0.34902, 1 )
+custom_fonts/font = ExtResource( 1 )
 keep_pressed_outside = true
 text = "SALIR"
 clip_text = true
 
 [node name="Jugar" type="Button" parent="."]
+modulate = Color( 0.45098, 0.152941, 0.152941, 1 )
 anchor_left = 0.44
 anchor_top = 0.41
 anchor_right = 0.589
-anchor_bottom = 0.5
+anchor_bottom = 0.488
 margin_left = 1.19995
 margin_top = 0.199982
 margin_right = 1.11987
 margin_bottom = 12.0
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
-custom_colors/font_color = Color( 0.886275, 0.184314, 0.156863, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0.592773, 0.10388, 0.0781488, 1 )
 custom_colors/font_color_pressed = Color( 0.885742, 0.41209, 0.393567, 1 )
+custom_fonts/font = ExtResource( 1 )
 text = "JUGAR"
 clip_text = true
 

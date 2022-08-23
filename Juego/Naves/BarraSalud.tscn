@@ -36,9 +36,6 @@ value = 80.0
 rounded = true
 percent_visible = false
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="TweenVisibilidad" type="Tween" parent="."]
 

@@ -64,9 +64,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 color = Color( 0, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="TextureRect" type="TextureRect" parent="FadeCanvas/ColorRect"]
 anchor_left = 0.5
@@ -81,9 +78,6 @@ mouse_filter = 2
 texture = ExtResource( 1 )
 expand = true
 stretch_mode = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="FadeCanvas"]
 anims/default = SubResource( 1 )

@@ -42,10 +42,10 @@ shape = SubResource( 1 )
 proyectil = ExtResource( 11 )
 
 [node name="PuntoIzquierdo" parent="Canion" index="0"]
-position = Vector2( 0, -28 )
+position = Vector2( 0.12373, -36 )
 
 [node name="PuntoDerecho" parent="Canion" index="1"]
-position = Vector2( 0, 28 )
+position = Vector2( 0.12373, 38 )
 
 [node name="ImpactoSFX" parent="." index="3"]
 stream = ExtResource( 12 )
@@ -54,7 +54,7 @@ volume_db = -4.727
 [node name="Escudo" parent="." index="4" instance=ExtResource( 10 )]
 
 [node name="EstelaPuntoInicio" parent="." index="5" instance=ExtResource( 6 )]
-position = Vector2( -13.9736, 0 )
+position = Vector2( -16, 0 )
 
 [node name="MotorSFX" parent="." index="6" instance=ExtResource( 8 )]
 
@@ -64,6 +64,9 @@ position = Vector2( -13.9736, 0 )
 
 [node name="LaserBeam2D" parent="." index="9" instance=ExtResource( 5 )]
 position = Vector2( 30.8677, 0 )
+cast_speed = 6000.0
+max_length = 1200.0
+growth_time = 0.3
 
 [node name="BarraSalud" parent="." index="10"]
 margin_left = -72.5613

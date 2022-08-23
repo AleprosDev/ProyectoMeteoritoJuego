@@ -4,7 +4,7 @@ extends EnemigoBase
 
 ## Atributos Export
 export var rango_max_ataque:float = 1400.0
-export var velocidad:float = 400.0
+export var velocidad:float = 300.0
 
 ## Atributos
 var base_duenia:Node2D

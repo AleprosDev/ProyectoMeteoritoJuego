@@ -7,7 +7,7 @@ export var cast_speed := 7000.0
 # Maximum length of the laser in pixels.
 export var max_length := 1400.0
 # Base duration of the tween animation in seconds.
-export var growth_time := 0.1
+export var growth_time := 0.5
 
 export var radio_danio:float = 4.0
 export var energia:float = 4.0
@@ -96,7 +96,7 @@ func controlar_energia(consumo: float) -> void:
 func appear() -> void:
 	if tween.is_active():
 		tween.stop_all()
-	tween.interpolate_property(fill, "width", 0, line_width, growth_time * 2)
+	tween.interpolate_property(fill, "width", 0, line_width, growth_time * 0.8)
 	tween.start()
 
 

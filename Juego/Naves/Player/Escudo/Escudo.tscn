@@ -221,9 +221,9 @@ scale = Vector2( 1e-05, 1e-05 )
 texture = ExtResource( 2 )
 
 [node name="SpriteAbriendo1" type="Sprite" parent="."]
-position = Vector2( -1.19209e-07, -1.49012e-08 )
+position = Vector2( 2.98023e-08, 1.49012e-08 )
 rotation = 1.5708
-scale = Vector2( 0.0186401, 0.0255305 )
+scale = Vector2( 0.0204166, 0.0279637 )
 texture = ExtResource( 1 )
 
 [node name="SpriteAbriendo2" type="Sprite" parent="."]
