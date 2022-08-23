@@ -11,5 +11,5 @@ dest_files=[ "res://.import/ruidoMotor.ogg-790d443879782e5ff120e817173f61b0.oggs
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

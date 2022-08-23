@@ -1,6 +1,6 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://Juego/Naves/Player/player_orange.png" type="Texture" id=1]
+[ext_resource path="res://Juego/Naves/Player/nave.png" type="Texture" id=1]
 [ext_resource path="res://Juego/Naves/Player/MaterialFisicol.tres" type="PhysicsMaterial" id=2]
 [ext_resource path="res://Juego/Naves/Player/Player.gd" type="Script" id=3]
 [ext_resource path="res://Juego/Naves/Player/CamaraPlayer.tscn" type="PackedScene" id=4]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Juego/Naves/Player/AnimacionesPlayer.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Juego/Naves/Player/Escudo/Escudo.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Juego/Proyectiles/ProyectilPlayer.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Juego/Naves/Player/impacto.ogg" type="AudioStream" id=12]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 39.5414
@@ -45,6 +46,10 @@ position = Vector2( 0, -28 )
 
 [node name="PuntoDerecho" parent="Canion" index="1"]
 position = Vector2( 0, 28 )
+
+[node name="ImpactoSFX" parent="." index="3"]
+stream = ExtResource( 12 )
+volume_db = -4.727
 
 [node name="Escudo" parent="." index="4" instance=ExtResource( 10 )]
 
