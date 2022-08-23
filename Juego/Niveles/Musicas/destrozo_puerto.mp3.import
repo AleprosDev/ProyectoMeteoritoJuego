@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/destrozo_puerto.mp3-222f6b9bb42739b75fc1f4a9553c33de.mp3str"
+
+[deps]
+
+source_file="res://Juego/Niveles/Musicas/destrozo_puerto.mp3"
+dest_files=[ "res://.import/destrozo_puerto.mp3-222f6b9bb42739b75fc1f4a9553c33de.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

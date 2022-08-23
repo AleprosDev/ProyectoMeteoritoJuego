@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/odisea_espacio.mp3-eee87af9311084d5b6e52dc8fe768269.mp3str"
+
+[deps]
+
+source_file="res://Juego/Niveles/Musicas/odisea_espacio.mp3"
+dest_files=[ "res://.import/odisea_espacio.mp3-eee87af9311084d5b6e52dc8fe768269.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

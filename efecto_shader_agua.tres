@@ -38,10 +38,10 @@ void fragment() {
 	
 //	COLOR = texture(TEXTURE, tiled_uvs);
 //	COLOR = texture(TEXTURE, tiled_uvs + wave_uv_offset * amplitude);
-	NORMALMAP = texture(NORMAL_TEXTURE, UV + texture_based_offset).rgb;
-	COLOR = vec4(wave_uv_offset, vec2(0.0, 1.0));
+//	NORMALMAP = texture(NORMAL_TEXTURE, UV + texture_based_offset).rgb;
+//	COLOR = vec4(wave_uv_offset, vec2(0.0, 1.0));
 	COLOR = vec4(UV * aspect_ratio, vec2(0.0, 1.0));
-//	COLOR = texture(TEXTURE, adjusted_uv + texture_based_offset);
+	COLOR = texture(TEXTURE, adjusted_uv + texture_based_offset);
 }
 "
 

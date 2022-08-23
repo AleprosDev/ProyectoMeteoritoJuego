@@ -92,8 +92,8 @@ script = ExtResource( 5 )
 
 [node name="Light2D" type="Light2D" parent="Sprite"]
 material = SubResource( 8 )
-position = Vector2( 9.98959, 13.5627 )
-scale = Vector2( 1.63943, 0.919705 )
+position = Vector2( 4.99473, 23.6094 )
+scale = Vector2( 1.65309, 0.965217 )
 texture = ExtResource( 6 )
 texture_scale = 4.57
 color = Color( 0.772549, 0.54902, 0.462745, 0.34902 )

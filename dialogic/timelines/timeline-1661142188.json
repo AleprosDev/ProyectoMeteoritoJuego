@@ -1,6 +1,14 @@
 {
 	"events": [
 		{
+			"audio": "play",
+			"audio_bus": "SFX",
+			"event_id": "dialogic_030",
+			"event_name": "AudioEvent",
+			"file": "res://Juego/Niveles/Opening/alarm_sound.mp3",
+			"volume": -0.04
+		},
+		{
 			"animation": "2-fade_in_up.gd",
 			"animation_length": 0.05,
 			"animation_wait": true,
@@ -58,13 +66,13 @@
 			"character": "character-1661144157.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Nos encontramos mas alla de Setria, en el borde federal de comercio galactico capitan."
+			"text": "Nos encontramos mas alla de Setria, en el borde federal del comercio galactico capitan."
 		},
 		{
 			"character": "character-1661140280.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Comunicate con la guardia Junior, e indicame condiciones de la nave y del ambiente."
+			"text": "Comunicate con la guardia inmediatamente, e indicame condiciones de la nave y del ambiente."
 		},
 		{
 			"character": "character-1661144157.json",

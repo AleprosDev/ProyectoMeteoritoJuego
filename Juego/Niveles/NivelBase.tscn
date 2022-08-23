@@ -5,21 +5,21 @@
 [ext_resource path="res://default_env.tres" type="Environment" id=3]
 [ext_resource path="res://Juego/Explosiones/Explosion.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Juego/Meteoritos/Meteorito.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Juego/Niveles/Musicas/odisea_espacio.mp3" type="AudioStream" id=6]
 [ext_resource path="res://Juego/Explosiones/ExplosionMeteorito.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Juego/Niveles/Fondos/StarFieldBackground.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Juego/Meteoritos/SectorMeteoritos.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Juego/Naves/Enemigos/EnemigoInterceptor.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Juego/Niveles/CamaraJuego.gd" type="Script" id=11]
+[ext_resource path="res://Juego/Niveles/Musicas/destrozo_puerto.mp3" type="AudioStream" id=12]
 [ext_resource path="res://Juego/Estaciones/Rele/ReleMasa.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Juego/UI/HUD/HUD.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Juego/Niveles/Musicas/astro-force.wav" type="AudioStream" id=16]
-[ext_resource path="res://Juego/Niveles/Musicas/escape-the-reactor.wav" type="AudioStream" id=17]
 
 [node name="NivelBase" type="Node2D"]
 position = Vector2( 0, 1 )
 script = ExtResource( 2 )
-musica_nivel = ExtResource( 16 )
-musica_combate = ExtResource( 17 )
+musica_nivel = ExtResource( 6 )
+musica_combate = ExtResource( 12 )
 explosion = ExtResource( 4 )
 explosion_meteorito = ExtResource( 7 )
 meteorito = ExtResource( 5 )
@@ -55,6 +55,7 @@ one_shot = true
 [node name="ActualizadorTimer" type="Timer" parent="."]
 
 [node name="StarFieldBackground" parent="." instance=ExtResource( 8 )]
+color_fondo = Color( 0, 0, 0, 1 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 256.54, 1310.89 )
