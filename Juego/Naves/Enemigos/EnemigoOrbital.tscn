@@ -1,13 +1,22 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Juego/Naves/NaveBase.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Juego/Naves/Enemigos/enemigo_spawn_base-sheet.png" type="Texture" id=2]
 [ext_resource path="res://Juego/Naves/Enemigos/EnemigoOrbital.gd" type="Script" id=3]
 [ext_resource path="res://Juego/Proyectiles/ProyectilEnemigo.tscn" type="PackedScene" id=4]
+[ext_resource path="res://TemporalAssets/Smooth_outline.gdshader" type="Shader" id=5]
+
+[sub_resource type="ShaderMaterial" id=6]
+shader = ExtResource( 5 )
+shader_param/Smooth = true
+shader_param/width = 31.72
+shader_param/outline_color = Color( 0.054902, 0.156863, 0.0705882, 1 )
+shader_param/pixel_size = 10
+shader_param/width_speed = 6.28
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 21.1232
-height = 37.1016
+height = 33.7536
 
 [sub_resource type="Animation" id=5]
 length = 0.001
@@ -24,7 +33,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=2]
 resource_name = "default"
-length = 0.4
+length = 1.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:scale")
 tracks/0/interp = 1
@@ -44,8 +53,8 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.1, 0.2 )
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4, 0.8, 1.2 )
 }
 
 [sub_resource type="Animation" id=3]
@@ -74,6 +83,7 @@ border_color = Color( 0, 0, 0, 1 )
 border_blend = true
 
 [node name="EnemigoOrbital" instance=ExtResource( 1 )]
+modulate = Color( 1, 1.14, 0.64, 1 )
 z_index = 40
 z_as_relative = false
 collision_layer = 2
@@ -82,10 +92,12 @@ mode = 3
 contacts_reported = 2
 contact_monitor = true
 script = ExtResource( 3 )
-hitpoints = 15.0
-velocidad = 250.0
+hitpoints = 5.0
+velocidad = 200.0
 
 [node name="Sprite" parent="." index="0"]
+material = SubResource( 6 )
+position = Vector2( 0, -4.76837e-07 )
 rotation = -1.5708
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
@@ -99,14 +111,14 @@ shape = SubResource( 1 )
 [node name="Canion" parent="." index="2"]
 position = Vector2( 30.3953, 0 )
 proyectil = ExtResource( 4 )
-cadencia_disparo = 1.5
-velocidad_proyectil = 1600
+cadencia_disparo = 1.0
+velocidad_proyectil = 1400
 
 [node name="PuntoIzquierdo" parent="Canion" index="0"]
-position = Vector2( -14.3953, -13 )
+position = Vector2( -10.3953, -19 )
 
 [node name="PuntoDerecho" parent="Canion" index="1"]
-position = Vector2( -14.3953, 13 )
+position = Vector2( -10.3953, 19 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
 autoplay = "spawn"

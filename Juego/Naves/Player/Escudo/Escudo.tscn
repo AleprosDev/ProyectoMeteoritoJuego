@@ -204,11 +204,11 @@ tracks/5/keys = {
 }
 
 [node name="Escudo" type="Area2D"]
-modulate = Color( 0.4, 4.5, 1.8, 1 )
+modulate = Color( 0.4, 2.16, 1.62, 1 )
 z_index = 55
 z_as_relative = false
 collision_layer = 0
-collision_mask = 16
+collision_mask = 18
 script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

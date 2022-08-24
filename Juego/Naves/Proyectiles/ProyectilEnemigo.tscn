@@ -4,8 +4,8 @@
 [ext_resource path="res://Juego/Naves/Proyectiles/Proyectil.tscn" type="PackedScene" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 4.22614
-height = 28.6905
+radius = 3.39284
+height = 24.6428
 
 [node name="ProyectilEnemigo" instance=ExtResource( 2 )]
 z_index = 39
@@ -15,6 +15,8 @@ audio_bus_name = "SFX"
 
 [node name="Sprite" parent="." index="0"]
 modulate = Color( 2.15, 2.16, 1.14, 0.36 )
+position = Vector2( 0.354713, -0.0464005 )
+scale = Vector2( 0.659727, 0.821388 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" parent="." index="1"]
@@ -22,5 +24,5 @@ position = Vector2( 3.98159e-05, -0.059577 )
 shape = SubResource( 1 )
 
 [node name="VisibilityNotifier2D" parent="." index="2"]
-position = Vector2( -0.375385, -0.0985123 )
-scale = Vector2( 0.448159, 1.8484 )
+position = Vector2( 0.0302663, -0.066251 )
+scale = Vector2( 0.318238, 1.53087 )

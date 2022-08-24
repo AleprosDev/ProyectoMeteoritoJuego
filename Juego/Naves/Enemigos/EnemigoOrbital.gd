@@ -14,6 +14,9 @@ var path_follow:PathFollow2D
 ## Atributos Onready
 onready var detector_obstaculo:RayCast2D = $DetectorObstaculo
 
+func activarDefault()  -> void:
+	$AnimationPlayer.play("default")
+
 ## Constructor
 func crear(pos: Vector2, duenia: Node2D, ruta_duenia: Path2D) -> void:
 	global_position = pos
@@ -21,6 +24,9 @@ func crear(pos: Vector2, duenia: Node2D, ruta_duenia: Path2D) -> void:
 	ruta = ruta_duenia
 	path_follow = PathFollow2D.new()
 	ruta.add_child(path_follow)
+	activarDefault()
+	
+
 
 ## Metodos
 func _ready() -> void:
@@ -30,6 +36,7 @@ func _process(delta: float) -> void:
 	path_follow.offset += velocidad * delta
 	position = path_follow.global_position
 
+
 ## Metodos Custom
 func rotar_hacia_player() -> void:
 	.rotar_hacia_player()
@@ -37,6 +44,8 @@ func rotar_hacia_player() -> void:
 		canion.set_esta_disparando(false)
 	else:
 		canion.set_esta_disparando(true)
+
+
 
 ## Señales Externas
 func _on_base_destruida(base:Node2D, _pos) -> void:

@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Juego/Niveles/Fondos/StarField.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Juego/Niveles/Fondos/FondoEstrellas.gd" type="Script" id=2]
+[ext_resource path="res://Juego/Niveles/Fondos/StarFieldBackgroundShader.tres" type="Material" id=3]
 [ext_resource path="res://Juego/Niveles/Fondos/red background 1.png" type="Texture" id=4]
 [ext_resource path="res://Juego/Niveles/Fondos/red background 2.png" type="Texture" id=5]
 [ext_resource path="res://Juego/Niveles/Fondos/red background 3.png" type="Texture" id=6]
@@ -20,15 +21,45 @@ position = Vector2( 963.5, 548 )
 scale = Vector2( 5.98438, 5.97778 )
 texture = ExtResource( 4 )
 
+[node name="EstrellasMedias" type="ParallaxLayer" parent="."]
+modulate = Color( 1, 1, 1, 0.705882 )
+motion_scale = Vector2( 0.03, 0.03 )
+motion_mirroring = Vector2( 1024, 600 )
+
+[node name="StarField" parent="EstrellasMedias" instance=ExtResource( 1 )]
+position = Vector2( 209, 217 )
+amount = 7
+lifetime = 2.0
+explosiveness = 0.27
+
 [node name="EstrellasCercanas" type="ParallaxLayer" parent="."]
 modulate = Color( 1, 1, 1, 0.784314 )
 motion_scale = Vector2( 0.3, 0.3 )
 motion_mirroring = Vector2( 1900, 1050 )
 
 [node name="StarField" parent="EstrellasCercanas" instance=ExtResource( 1 )]
+modulate = Color( 1, 1, 1, 0.2 )
 position = Vector2( 955, 543 )
 scale = Vector2( 0.4, 0.4 )
 amount = 40
+lifetime = 2.0
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.1, 1 )
+motion_mirroring = Vector2( 7500, 10000 )
+
+[node name="PlanetaFondo" type="Sprite" parent="ParallaxLayer4"]
+modulate = Color( 0.937255, 0.658824, 0.658824, 0.611765 )
+position = Vector2( 1397.2, 444 )
+scale = Vector2( 0.201124, 0.193939 )
+texture = ExtResource( 7 )
+
+[node name="ShaderRojo" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.509804 )
+material = ExtResource( 3 )
+position = Vector2( 960.688, 542 )
+scale = Vector2( 5.95195, 5.86667 )
+texture = ExtResource( 4 )
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
 motion_scale = Vector2( 0.3, 1 )
@@ -48,16 +79,6 @@ position = Vector2( 961, 544 )
 scale = Vector2( 5.98125, 5.94444 )
 texture = ExtResource( 6 )
 
-[node name="ParallaxLayer4" type="ParallaxLayer" parent="."]
-motion_scale = Vector2( 0.1, 1 )
-motion_mirroring = Vector2( 7500, 10000 )
-
-[node name="PlanetaFondo" type="Sprite" parent="ParallaxLayer4"]
-modulate = Color( 0.937255, 0.658824, 0.658824, 1 )
-position = Vector2( 1397, 445 )
-scale = Vector2( 0.536364, 0.536364 )
-texture = ExtResource( 7 )
-
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
 modulate = Color( 0.211765, 0.0313726, 0.0313726, 1 )
@@ -69,17 +90,6 @@ margin_right = 4.0
 margin_bottom = 61.0
 mouse_filter = 2
 color = Color( 0.035294, 0.054902, 0.145098, 1 )
-
-[node name="EstrellasMedias" type="ParallaxLayer" parent="."]
-visible = false
-modulate = Color( 1, 1, 1, 0.705882 )
-motion_scale = Vector2( 0.03, 0.03 )
-motion_mirroring = Vector2( 1024, 600 )
-
-[node name="StarField" parent="EstrellasMedias" instance=ExtResource( 1 )]
-visible = false
-position = Vector2( 209, 217 )
-amount = 7
 
 [node name="EstrellaLejanas" type="ParallaxLayer" parent="."]
 visible = false
