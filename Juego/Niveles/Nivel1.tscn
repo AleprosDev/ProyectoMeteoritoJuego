@@ -21,3 +21,6 @@ numero_peligros = 2
 
 [node name="StarFieldBackground" parent="." index="10"]
 color_fondo = Color( 0, 0.0196078, 0.188235, 1 )
+
+[node name="Meteorito" parent="." index="12"]
+position = Vector2( 720, 1203 )

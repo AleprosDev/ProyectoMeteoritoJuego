@@ -134,15 +134,15 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/dialogic/Example Assets/History/HistoryRow.gd"
 }, {
-"base": "RigidBody2D",
+"base": "Reference",
 "class": "Meteorito",
 "language": "GDScript",
-"path": "res://Juego/Meteoritos/Meteorito.gd"
+"path": "res://Juego/Meteorito/Meteorito.gd"
 }, {
-"base": "Position2D",
+"base": "Reference",
 "class": "MeteoritoSpawner",
 "language": "GDScript",
-"path": "res://Juego/Meteoritos/MeteoritoSpawner.gd"
+"path": "res://Juego/Meteorito/MeteoritoSpawner.gd"
 }, {
 "base": "AudioStreamPlayer2D",
 "class": "Motor",
@@ -179,10 +179,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Juego/Estaciones/Rele/ReleMasa.gd"
 }, {
-"base": "Node2D",
+"base": "Reference",
 "class": "SectorMeteoritos",
 "language": "GDScript",
-"path": "res://Juego/Meteoritos/SectorMeteoritos.gd"
+"path": "res://Juego/Meteorito/SectorMeteoritos.gd"
 } ]
 _global_script_class_icons={
 "BarraSalud": "",

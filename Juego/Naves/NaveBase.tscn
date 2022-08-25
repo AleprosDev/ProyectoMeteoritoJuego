@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Juego/Naves/NaveBase.gd" type="Script" id=1]
-[ext_resource path="res://Juego/Naves/Player/impact.ogg" type="AudioStream" id=2]
+[ext_resource path="res://Juego/Naves/Enemigos/sound_impact_enemigo.ogg" type="AudioStream" id=2]
 [ext_resource path="res://Juego/Naves/BarraSalud.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Juego/Proyectiles/Canion.tscn" type="PackedScene" id=4]
 

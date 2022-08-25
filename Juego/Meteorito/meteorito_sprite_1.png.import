@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/meteorito_dim_1.png-3c8b80663e91cd00901dcc97c4830c2b.stex"
+path="res://.import/meteorito_sprite_1.png-eda2df86899a64b4c83a9b02d9e56a2c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Juego/Meteoritos/meteorito_dim_1.png"
-dest_files=[ "res://.import/meteorito_dim_1.png-3c8b80663e91cd00901dcc97c4830c2b.stex" ]
+source_file="res://Juego/Meteorito/meteorito_sprite_1.png"
+dest_files=[ "res://.import/meteorito_sprite_1.png-eda2df86899a64b4c83a9b02d9e56a2c.stex" ]
 
 [params]
 

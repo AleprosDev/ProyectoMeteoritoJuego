@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/meteorito_sprite_1.png-370d9d0a3096182ec83eca60270f84f0.stex"
+path="res://.import/interceptor_new.png-0bb2909893184a1c954fdd835ee38b1d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Juego/Meteoritos/meteorito_sprite_1.png"
-dest_files=[ "res://.import/meteorito_sprite_1.png-370d9d0a3096182ec83eca60270f84f0.stex" ]
+source_file="res://Juego/Naves/Enemigos/interceptor_new.png"
+dest_files=[ "res://.import/interceptor_new.png-0bb2909893184a1c954fdd835ee38b1d.stex" ]
 
 [params]
 
