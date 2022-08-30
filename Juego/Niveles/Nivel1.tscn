@@ -8,8 +8,9 @@
 prox_nivel = "res://Juego/Niveles/Nivel2.tscn"
 
 [node name="SectorDePeligro" parent="TriggersLluviaMeteoritos" index="0" instance=ExtResource( 4 )]
-position = Vector2( -1560.7, 497.811 )
+position = Vector2( 340, 1050 )
 tipo_peligro = "Meteorito"
+numero_peligros = 1
 
 [node name="BaseEnemiga" parent="ContenedorBasesEnemigas" index="0" instance=ExtResource( 2 )]
 position = Vector2( 573.785, -701.132 )

@@ -15,8 +15,8 @@ var vel_spawn_original:Vector2
 var esta_destruido:bool = false
 
 ## Atributos Onready
-onready var impacto_sfx:AudioStreamPlayer = $ImpactoMeteoritoSFX
-onready var anim_meteorito_sfx: AnimationPlayer = $AnimMeteorito
+onready var impacto_sfx:AudioStreamPlayer2D = $Impacto_SFX
+onready var anim_meteorito_sfx: AnimationPlayer = $AnimationPlayer
 
 ## Setters y Getters
 func set_esta_en_sector(valor: bool) -> void:
