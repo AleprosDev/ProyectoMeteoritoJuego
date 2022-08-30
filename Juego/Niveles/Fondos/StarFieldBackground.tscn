@@ -8,7 +8,7 @@
 [ext_resource path="res://Juego/Niveles/Fondos/red background 3.png" type="Texture" id=6]
 [ext_resource path="res://Juego/Niveles/Fondos/planet.png" type="Texture" id=7]
 
-[node name="StarFieldBackground" type="ParallaxBackground"]
+[node name="StarFieldBackgroundAzul" type="ParallaxBackground"]
 scroll_ignore_camera_zoom = true
 script = ExtResource( 2 )
 
@@ -17,6 +17,7 @@ motion_scale = Vector2( 0.2, 1 )
 motion_mirroring = Vector2( 1900, 1050 )
 
 [node name="Fondo1" type="Sprite" parent="ParallaxLayer"]
+modulate = Color( 0.13, 0.22, 2.67, 1 )
 position = Vector2( 963.5, 548 )
 scale = Vector2( 5.98438, 5.97778 )
 texture = ExtResource( 4 )
@@ -49,13 +50,18 @@ motion_scale = Vector2( 0.1, 1 )
 motion_mirroring = Vector2( 7500, 10000 )
 
 [node name="PlanetaFondo" type="Sprite" parent="ParallaxLayer4"]
-modulate = Color( 0.937255, 0.658824, 0.658824, 0.611765 )
 position = Vector2( 1397.2, 444 )
 scale = Vector2( 0.201124, 0.193939 )
 texture = ExtResource( 7 )
 
+[node name="ShaderAzul" type="Sprite" parent="."]
+material = ExtResource( 3 )
+position = Vector2( 960.688, 542 )
+scale = Vector2( 5.95195, 5.86667 )
+texture = ExtResource( 4 )
+
 [node name="ShaderRojo" type="Sprite" parent="."]
-modulate = Color( 1, 1, 1, 0.509804 )
+visible = false
 material = ExtResource( 3 )
 position = Vector2( 960.688, 542 )
 scale = Vector2( 5.95195, 5.86667 )
@@ -66,6 +72,7 @@ motion_scale = Vector2( 0.3, 1 )
 motion_mirroring = Vector2( 1900, 1050 )
 
 [node name="Fondo2" type="Sprite" parent="ParallaxLayer2"]
+modulate = Color( 0.09, 0.44, 4.7, 1 )
 position = Vector2( 958, 569 )
 scale = Vector2( 6.00938, 6.15556 )
 texture = ExtResource( 5 )
@@ -75,6 +82,7 @@ motion_scale = Vector2( 0.5, 1 )
 motion_mirroring = Vector2( 1900, 1050 )
 
 [node name="Fondo3" type="Sprite" parent="ParallaxLayer3"]
+modulate = Color( 0.15, 0.41, 2.67, 1 )
 position = Vector2( 961, 544 )
 scale = Vector2( 5.98125, 5.94444 )
 texture = ExtResource( 6 )

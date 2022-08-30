@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[ext_resource path="res://Juego/Niveles/Fondos/new_shader_fondo_azul.tres" type="Shader" id=1]
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/OCTAVE = 6
+shader_param/timescale = 0.8
+shader_param/CLOUD1_COL = Color( 0.305882, 0.137255, 0.0705882, 0.831373 )
+shader_param/CLOUD2_COL = Color( 0.295898, 0.0251398, 0.0456042, 0.760784 )
+shader_param/CLOUD3_COL = Color( 1.05098, 0.0196078, 0.0509804, 0.729412 )
+shader_param/CLOUD4_COL = Color( 1.14, 0.27, 0.13, 0.77 )
+shader_param/SPACE = Color( 0.796078, 0.180392, 0.0745098, 0.831373 )
+shader_param/zoomScale = 8.0
+shader_param/size = 8.0
+shader_param/starscale = 0.0
+shader_param/prob = 0.98

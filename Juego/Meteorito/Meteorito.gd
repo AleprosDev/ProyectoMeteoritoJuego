@@ -64,7 +64,7 @@ func recibir_danio(danio: float) -> void:
 		destruir()
 	
 	impacto_sfx.play()
-	anim_meteorito_sfx.play("impactando")
+	anim_meteorito_sfx.play("impacto")
 
 func destruir() -> void:
 	$CollisionShape2D.set_deferred("disabled", true)

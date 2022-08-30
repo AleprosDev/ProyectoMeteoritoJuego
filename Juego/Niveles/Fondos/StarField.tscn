@@ -38,12 +38,14 @@ initial_velocity_random = 1.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 radial_accel = 2.0
+color = Color( 0.490196, 0.627451, 0.643137, 1 )
 anim_speed_random = 0.12
 anim_speed_curve = SubResource( 4 )
 anim_offset = 0.46
 anim_offset_random = 0.33
 
 [node name="StarField" type="Particles2D"]
+modulate = Color( 0.419608, 0.529412, 0.713726, 1 )
 material = SubResource( 1 )
 position = Vector2( 511, 295 )
 scale = Vector2( 0.3, 0.3 )

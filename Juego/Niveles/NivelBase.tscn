@@ -1,10 +1,9 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Juego/Naves/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Juego/Niveles/Nivel.gd" type="Script" id=2]
 [ext_resource path="res://default_env.tres" type="Environment" id=3]
 [ext_resource path="res://Juego/Explosiones/Explosion.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Juego/Meteorito/Meteorito.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Juego/Niveles/Musicas/odisea_espacio.mp3" type="AudioStream" id=6]
 [ext_resource path="res://Juego/Explosiones/ExplosionMeteorito.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Juego/Niveles/Fondos/StarFieldBackground.tscn" type="PackedScene" id=8]
@@ -23,7 +22,7 @@ musica_nivel = ExtResource( 6 )
 musica_combate = ExtResource( 12 )
 explosion = ExtResource( 4 )
 explosion_meteorito = ExtResource( 7 )
-meteorito = ExtResource( 5 )
+meteorito = ExtResource( 13 )
 sector_meteoritos = ExtResource( 9 )
 enemigo_interceptor = ExtResource( 10 )
 rele_masa = ExtResource( 14 )
@@ -60,9 +59,6 @@ color_fondo = Color( 0, 0, 0, 1 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 256.54, 1310.89 )
-
-[node name="Meteorito" parent="." instance=ExtResource( 13 )]
-position = Vector2( 991, 1441 )
 
 [connection signal="tween_completed" from="TweenCamara" to="." method="_on_TweenCamara_tween_completed"]
 [connection signal="timeout" from="RestartTimer" to="." method="_on_RestartTimer_timeout"]

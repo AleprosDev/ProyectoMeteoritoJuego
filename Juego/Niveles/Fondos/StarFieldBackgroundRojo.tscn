@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Juego/Niveles/Fondos/StarFieldBackground.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Juego/Niveles/Fondos/new_shadermaterial_rojo.tres" type="Material" id=2]
+
+[node name="StarFieldBackgroundRojo" instance=ExtResource( 1 )]
+color_fondo = Color( 0.454902, 0.0823529, 0.262745, 1 )
+
+[node name="Fondo1" parent="ParallaxLayer" index="0"]
+modulate = Color( 1.14, 0.24, 0.13, 0.94 )
+
+[node name="ShaderAzul" parent="." index="4"]
+visible = false
+
+[node name="ShaderRojo" parent="." index="5"]
+visible = true
+material = ExtResource( 2 )
+
+[node name="Fondo2" parent="ParallaxLayer2" index="0"]
+modulate = Color( 0.885742, 0.176989, 0.137532, 1 )
+
+[node name="Fondo3" parent="ParallaxLayer3" index="0"]
+modulate = Color( 0.894531, 0.265789, 0.142391, 1 )
+
+[node name="ColorRect" parent="." index="8"]
+color = Color( 0.454902, 0.0823529, 0.262745, 1 )

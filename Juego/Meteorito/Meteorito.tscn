@@ -453,21 +453,17 @@ anims/default = SubResource( 1 )
 anims/impacto = SubResource( 2 )
 
 [node name="SpriteDiminuto1" type="Sprite" parent="."]
-visible = false
 z_index = 1
 texture = ExtResource( 6 )
 
 [node name="SpriteDiminuto2" type="Sprite" parent="."]
-visible = false
 z_index = 1
 texture = ExtResource( 5 )
 
 [node name="SpriteDiminuto3" type="Sprite" parent="."]
-visible = false
 z_index = 1
 texture = ExtResource( 6 )
 
 [node name="SpriteDiminuto4" type="Sprite" parent="."]
-visible = false
 z_index = 1
 texture = ExtResource( 6 )

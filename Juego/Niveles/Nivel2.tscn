@@ -6,14 +6,17 @@
 [ext_resource path="res://Juego/Niveles/Fondos/StarFieldBackground_nivel2.tscn" type="PackedScene" id=4]
 
 [node name="Nivel2" instance=ExtResource( 1 )]
+prox_nivel = "res://Juego/Niveles/Nivel3.tscn"
+
+[node name="BaseEnemiga" parent="ContenedorBasesEnemigas" index="0" instance=ExtResource( 2 )]
+position = Vector2( 2166, -653 )
+numero_orbitales = 8
+
+[node name="SectorDePeligro" parent="ContenedorBasesEnemigas/BaseEnemiga" index="9" instance=ExtResource( 3 )]
+position = Vector2( 0, 1069 )
 
 [node name="StarFieldBackground" parent="." index="10"]
 color_fondo = Color( 0.0313726, 0.0745098, 0, 1 )
 
-[node name="StarFieldBackground2" parent="." index="11" instance=ExtResource( 4 )]
-
-[node name="BaseEnemiga" parent="." index="13" instance=ExtResource( 2 )]
-position = Vector2( 2166, -654 )
-
-[node name="SectorDePeligro" parent="BaseEnemiga" index="9" instance=ExtResource( 3 )]
-position = Vector2( 0, 1069 )
+[node name="StarFieldBackgroundVerde" parent="." index="11" instance=ExtResource( 4 )]
+color_fondo = Color( 0.18, 1.65, 0.12, 1 )
