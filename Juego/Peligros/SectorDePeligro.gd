@@ -20,3 +20,6 @@ func enviar_senial() -> void:
 	)
 	
 	queue_free()
+
+
+

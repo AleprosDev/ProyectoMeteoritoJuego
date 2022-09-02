@@ -28,6 +28,9 @@ onready var actualizador_timer:Timer = $ActualizadorTimer
 var meteoritos_totales:int = 0
 var player:Player = null
 var numero_bases_enemigas = 0
+var mostrar_dialogo = preload("res://Juego/Dialogo/DialogoMain.tscn")
+
+
 
 ## Metodos
 func _ready() -> void:
@@ -77,6 +80,8 @@ func crear_contenedores() -> void:
 	contenedor_enemigos = Node.new()
 	contenedor_enemigos.name = "ContenedorEnemigos"
 	add_child(contenedor_enemigos)
+	
+
 
 func contabilizar_bases_enemigas() -> int:
 	return $ContenedorBasesEnemigas.get_child_count()
@@ -121,6 +126,7 @@ func controlar_meteoritos_restantes() -> void:
 			camara_player,
 			tiempo_transicion_camara * 0.10
 		)
+
 
 func transicion_camaras(
 	desde: Vector2,
@@ -199,13 +205,27 @@ func crear_explosion(
 				new_explosion.scale = Vector2(escala, escala)
 				add_child(new_explosion)
 				yield(get_tree().create_timer(intervalo),"timeout")
+				
+
+
+
+
+
+
 
 func _on_nave_en_sector_peligro(centro_cam:Vector2, tipo_peligro:String, num_peligros:int) -> void:
+
 	if tipo_peligro == "Meteorito":
 		crear_sector_meteoritos(centro_cam, num_peligros)
 		Eventos.emit_signal("cambio_numero_meteoritos", num_peligros)
 	elif tipo_peligro == "Enemigo":
 		crear_sector_enemigos(num_peligros)
+	
+	
+		
+	
+
+		
 
 func _on_spawn_orbital(enemigo: EnemigoOrbital) -> void:
 	contenedor_enemigos.add_child(enemigo)
@@ -257,3 +277,18 @@ func _on_ActualizadorTimer_timeout() -> void:
 	Eventos.emit_signal("actualizar_tiempo", tiempo_limite)
 	if tiempo_limite == 0:
 		destruir_nivel()
+
+
+	
+		
+		
+
+
+func _on_SectorDeDialogo_body_entered(body: Node):
+	if body.is_in_group("Player"):
+		print('Pruebaaa')
+		var x = mostrar_dialogo.instance()
+		var posicion = $SectorDeDialogo/CollisionShape2D.get_global_position()
+		x.set_position(posicion)
+		print(posicion)
+		add_child(x)
