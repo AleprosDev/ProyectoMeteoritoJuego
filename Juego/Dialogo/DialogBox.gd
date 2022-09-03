@@ -1,12 +1,13 @@
+tool
 extends Control
 
-var dialog := [
-	"murcielagoss"
-	"esto es un ejemplo de otro texto largo"
-	"esto es un ejemplo de un texto largo"
-]
+var dialog = {
+	"zona_fruta" : ["bananas", "manzanas", "peras"],
+	"zona_verduras" : ["brocoli", "col", "esparrago"],
+	"zona_provincia" : ["SantiagoDelEstero", "Tucuman", "Chaco"],
+}
 
-var dialog_index = 0
+export var dialog_index = 0
 var finished = false
 
 func _ready():
@@ -18,9 +19,9 @@ func _process(delta):
 		load_dialog()
 	
 func load_dialog():
-	if dialog_index < dialog.size():
+	if dialog_index < dialog.size() and $pla:
 		finished = false
-		$RichTextLabel.bbcode_text = dialog[dialog_index]
+		$RichTextLabel.bbcode_text = dialog.zona_fruta[0]
 		$RichTextLabel.percent_visible = 0
 		$Tween.interpolate_property(
 			$RichTextLabel, "percent_visible", 0, 1, 1,
